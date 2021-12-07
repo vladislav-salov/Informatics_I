@@ -113,6 +113,7 @@ def matrix_input(m_rows: int, n_columns: int, input_type: bool) -> [str]:
         s: str
         upper_case: bool
         ch: str = ""
+        element: str
         for index in range(m_rows * n_columns):
             s = ""
             for ch_i in range(4):
@@ -178,11 +179,12 @@ def rows_sizes(matrix: [str], m_rows: int, n_columns: int):
             print(arr_of_sizes[i], "]")
         else:
             print(arr_of_sizes[i], end=", ")
-    # Сортировка массива по убыванию.
+    # Сортировка массива по невозрастанию.
     t: int
     for i in range(m_rows - 1):
         for j in range(m_rows - i - 1):
-            if arr_of_sizes[j] < arr_of_sizes[j + 1]:
+            if arr_of_sizes[j] <= arr_of_sizes[j + 1]:
+                # swap(arr_of_sizes[j], arr_of_sizes[j + 1])
                 t = arr_of_sizes[j]
                 arr_of_sizes[j] = arr_of_sizes[j + 1]
                 arr_of_sizes[j + 1] = t
